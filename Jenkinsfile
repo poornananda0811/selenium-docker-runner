@@ -15,7 +15,7 @@ pipeline {
             steps {
                 //sh
                // bat "docker-compose down"
-                bat "docker-compose up searchmodule Book-flight-module"
+                bat "docker-compose up Book-flight-module"
             }
         }
 
