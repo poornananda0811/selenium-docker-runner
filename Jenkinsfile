@@ -3,6 +3,12 @@ pipeline {
     agent any
     stages {
         //stage('Run Test') {
+
+        stage('pull latest image')  {
+        steps {
+        bat "docker pull poornanandatangirala0811/selenium-docker"
+        }
+        }
         stage('start grid') {
             steps {
                 //sh
