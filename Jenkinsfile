@@ -18,13 +18,17 @@ pipeline {
                 bat "docker-compose up search-module1"
             }
         }
-
-        stage('stop grid') {
-                    steps {
+    }
+    post{
+        always{
+                 archiveArtifacts artifacts: 'output/**'
+                 bat "docker-compose down"
+                }
+        }
+    }
+       // stage('stop grid') {
+          //          steps {
                         //sh
                        // bat "docker-compose down"
-                        bat "docker-compose down"
-                    }
-                }
-      }
-}
+             //           bat "docker-compose down"
+            //        }
